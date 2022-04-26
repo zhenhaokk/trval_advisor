@@ -12,12 +12,11 @@ import {
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import useStyles from "./styles.js";
 
-const List = ({ places, childClicked, isLoading }) => {
+const List = ({ places, childClicked, isLoading, type, setType, ratting, setRatting }) => {
   console.log({ childClicked });
   console.log( 'selected', Number(childClicked) );
   const classes = useStyles();
-  const [type, setType] = useState("restaurant");
-  const [ratting, setRatting] = useState("");
+
   const [elRef, setElRef] = useState([]);
 
   useEffect(() => {
@@ -39,7 +38,11 @@ const List = ({ places, childClicked, isLoading }) => {
         <>
           <FormControl className={classes.formControl}>
             <InputLabel id="type">Type</InputLabel>
-            <Select value={type} onChange={(e) => setType(e.target.value)}>
+            <Select
+              id="type"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+            >
               <MenuItem value="restaurants">Restaurants</MenuItem>
               <MenuItem value="hotels">Hotels</MenuItem>
               <MenuItem value="attractions">Attractions</MenuItem>
