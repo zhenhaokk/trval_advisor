@@ -13,8 +13,6 @@ import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import useStyles from "./styles.js";
 
 const List = ({ places, childClicked, isLoading, type, setType, ratting, setRatting }) => {
-  console.log({ childClicked });
-  console.log( 'selected', Number(childClicked) );
   const classes = useStyles();
 
   const [elRef, setElRef] = useState([]);
